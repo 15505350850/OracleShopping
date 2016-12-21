@@ -39,7 +39,10 @@ public class UserLogin extends HttpServlet {
 			request.getRequestDispatcher("admin/main.jsp").forward(
 					request, response);
 		}else {
+			
 			request.setAttribute("errMsg", "用户名或密码错误，请重试！");
+			request.getRequestDispatcher("index.jsp").forward(
+					request, response);
 			
 		}
 		

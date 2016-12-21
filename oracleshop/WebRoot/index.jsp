@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="main" >
   <div class="logo">
   <a>用户登录</a>
-  <input type="text" border="0" class="input_search">
+  
   </div>
   </div>
 

@@ -263,7 +263,7 @@ function loadproductshow(){
 			for(var i = 0; i < a; i++) {
 				$("#product_show_con").append(
 					"<div class='product_main'><div class='title'><a target='_blank' href='" +
-					"/shop/ProductAction?type=id&id=" +
+					"/oracleshop/ProductAction?type=id&id=" +
 					list[i].t_productid + "'> " +
 					list[i].t_productname +
 					"</a></div><div class='price'>￥ " +
@@ -319,7 +319,7 @@ function loadproductlist(){
 							"</tr>");
 					$("#product_show_con").append(
 						"<div class='product_main'><div class='title'><a target='_blank' href='" +
-						"/shop/ProductAction?type=id&id=" +
+						"/oracleshop/ProductAction?type=id&id=" +
 						list[i].t_productid + "'> " +
 						list[i].t_productname +
 						"</a></div><div class='price'>￥ " +
