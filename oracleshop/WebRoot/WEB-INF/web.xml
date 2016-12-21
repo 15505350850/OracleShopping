@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app id="WebApp_ID">
+	<display-name>shop</display-name>
+	
+  <servlet>
+    <servlet-name>UserRegister</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.shop.Action.UserRegister</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProductAction</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.shop.Action.ProductAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserAction</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.shop.Action.UserAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserLogout</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.shop.Action.UserLogout</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserLogin</servlet-name>
+    <servlet-class>com.shop.Action.UserLogin</servlet-class>
+  </servlet>
+
+
+
+
+
+	
+  <servlet-mapping>
+    <servlet-name>UserRegister</servlet-name>
+    <url-pattern>/UserRegister</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProductAction</servlet-name>
+    <url-pattern>/ProductAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserAction</servlet-name>
+    <url-pattern>/UserAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLogout</servlet-name>
+    <url-pattern>/UserLogout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLogin</servlet-name>
+    <url-pattern>/UserLogin</url-pattern>
+  </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
