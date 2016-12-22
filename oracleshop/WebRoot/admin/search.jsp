@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			<div class="input_search">
 				<a href="#">用户：${sessionScope.username}</a> <a
-					href="javascript:if(confirm('确定要退出登录吗?'))location='/shop/UserLogout'">退出登录</a>
+					href="javascript:if(confirm('确定要退出登录吗?'))location='/oracleshop/UserLogout'">退出登录</a>
 				<a href="#">修改密码</a>
 			</div>
 

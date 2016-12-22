@@ -11,6 +11,12 @@ import com.shop.Bean.UserBean;
 import com.shop.util.ConnectionPool;
 
 public class UserDao {
+	/**
+	 * 用户登录方法
+	 * @param username
+	 * @param password
+	 * @return
+	 */
 	public boolean userLogin(String username , String password){
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -28,7 +34,6 @@ public class UserDao {
 				if (rs.getInt("count(*)")>0) {
 					result = true;
 				}
-				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,9 +43,30 @@ public class UserDao {
 	}
 	
 	
+	/**
+	 * 用户注册方法
+	 * @param userBean
+	 * @return
+	 */
 	public int registerUser(UserBean userBean){
-		return 0;
-		
+		Connection conn = null;
+		PreparedStatement ps = null;
+		int rs = 0;
+		try {
+			conn = ConnectionPool.getConnection();
+			String sql = "insert into t_users values(t_userid.nextval,?,?,?,?,?)";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1,userBean.getT_nickname());
+			ps.setString(2, userBean.getT_name());
+			ps.setString(3, userBean.getT_tel());
+			ps.setString(4, userBean.getT_address());
+			ps.setString(5, userBean.getT_userpsw());
+			rs = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
 	}
 	
 	/**

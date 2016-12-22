@@ -9,7 +9,6 @@ $(function() {
     });
 	
 	
-	
 	$("#search_product_byword").click(function() {
 		searchproduct();
 	});
@@ -37,6 +36,7 @@ function searchproduct(){
 				$(".find_num").empty();
 				$(".find_num").append("<span>"+"未找到相关商品，换个关键词试试吧！"+"</span>"+
 						"");
+				$("#product_search_con").empty();
 			} else {
 				$(".find_num").show();
 				$(".find_num").empty();
@@ -47,7 +47,7 @@ function searchproduct(){
 				for ( var i = 0; i < a; i++) {
 					$("#product_search_con").append(
 							"<div class='product_main'><div class='title'><a target='_blank' href='" +
-							"/shop/ProductAction?type=id&id=" +
+							"/oracleshop/ProductAction?type=id&id=" +
 							list[i].t_productid + "'> " +
 							list[i].t_productname +
 							"</a></div><div class='price'>￥ " +

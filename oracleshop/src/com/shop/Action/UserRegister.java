@@ -32,16 +32,16 @@ public class UserRegister extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		response.setHeader("Content-type", "text/html;charset=UTF-8");
+		
 		UserBean userBean = new UserBean();
-		userBean.setT_name(request.getParameter("t_name"));
-		/**
-		 * 密码没做统一性验证，默认插入密码数据为第一次输入的密码
-		 */
-		userBean.setT_userpsw(request.getParameter("t_userpsw"));
-		userBean.setT_nickname(request.getParameter("t_nickname"));
-		userBean.setT_tel(request.getParameter("t_tel"));
-		userBean.setT_address(request.getParameter("t_address"));
-		userBean.setT_name(request.getParameter("t_name"));
+		userBean.setT_name(request.getParameter("username"));
+
+		userBean.setT_userpsw(request.getParameter("password1"));
+		userBean.setT_nickname(request.getParameter("nickname"));
+		userBean.setT_tel(request.getParameter("tel"));
+		userBean.setT_address(request.getParameter("address"));
+		//userBean.setT_name(request.getParameter("t_name"));
 		System.out.println(userBean.toString());
 		/**
 		 * 调用Dao层方法，执行注册用户操作
@@ -49,11 +49,17 @@ public class UserRegister extends HttpServlet {
 		UserDao userDao = new UserDao();
 		int a = userDao.registerUser(userBean);
 		if (a>0) {//注册成功
-			request.setAttribute("errMsg", "注册成功！请登录！");//置errmsg的值
-			request.getRequestDispatcher("index.jsp").forward(request,response);//返回到login登录界面
+			//request.setAttribute("errMsg", "注册成功！请登录！");//置errmsg的值
+			//request.getRequestDispatcher("index.jsp").forward(request,response);//返回到login登录界面
+			PrintWriter pw = response.getWriter();
+			pw.print("ok");
+			pw.flush();
 		}else {//注册失败
-			request.setAttribute("errMsg", "注册失败！请重新注册");//置errmsg的值
-			request.getRequestDispatcher("register.jsp").forward(request,response);//返回到login登录界面
+			//request.setAttribute("errMsg", "注册失败！请重新注册");//置errmsg的值
+			//request.getRequestDispatcher("register.jsp").forward(request,response);//返回到login登录界面
+			PrintWriter pw = response.getWriter();
+			pw.print("error");
+			pw.flush();
 		}
 
 		
